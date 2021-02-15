@@ -31,7 +31,7 @@ def main():
 
     ### main process ###
     
-    with open(input, 'rb') as reader:
+    with open('/Users/jisoo/Desktop/news_sum/추출요약/train.jsonl', 'rb') as reader:
         mylist = list(jsonlines.Reader(reader))
     mylist = mylist[first_index:last_index]
     
@@ -39,7 +39,7 @@ def main():
     printProgressBar(0, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
     
     for idx,items in enumerate(mylist):
-        target = ', '.join(items['article_original'])
+        target = ' '.join(items['article_original'])
         processed_text = do_lang(api_key,target)
         if processed_text.startswith('openapi error')==True:
             print('openapi error')
