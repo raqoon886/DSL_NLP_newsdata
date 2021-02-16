@@ -31,7 +31,7 @@ def main():
 
     ### main process ###
     
-    with open('/Users/jisoo/Desktop/news_sum/추출요약/train.jsonl', 'rb') as reader:
+    with open(input, 'rb') as reader:
         mylist = list(jsonlines.Reader(reader))
     mylist = mylist[first_index:last_index]
     
